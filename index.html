@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Professional - Ibnu Rahman Hakim Sultan</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-blue: #0f172a; 
+            --secondary-blue: #2563eb; 
+            --accent-red: #0f172a; 
+            --sidebar-bg: #ffffff;
+            --main-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #cbd5e1;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .cv-wrapper {
+            max-width: 1000px;
+            background: var(--main-bg);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            background: var(--sidebar-bg);
+            padding: 40px 25px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .profile-frame {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            border: 6px solid var(--accent-red);
+            padding: 4px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(239, 68, 68, 0.3);
+            overflow: hidden;
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sidebar-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        .contact-item i {
+            color: var(--secondary-blue);
+            width: 20px;
+        }
+
+        .sidebar-list {
+            list-style: none;
+            font-size: 12px;
+            color: var(--text-dark);
+            padding-left: 5px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .content-area { padding: 45px; }
+
+        .name-title {
+            color: var(--primary-blue);
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            border-bottom: 4px solid var(--secondary-blue);
+            display: inline-block;
+        }
+
+        .section-title-bar {
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+
+        .job-card {
+            border-left: 3px solid var(--accent-red);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .job-card h3 { font-size: 16px; color: var(--primary-blue); font-weight: 700; }
+        .job-card .comp { font-weight: 600; color: var(--secondary-blue); font-size: 13px; margin: 2px 0; }
+        .job-card .date { font-size: 11.5px; color: var(--text-light); margin-bottom: 8px; font-style: italic; }
+
+        .job-list { padding-left: 15px; font-size: 12.5px; line-height: 1.6; color: var(--text-dark); }
+        .job-list li { margin-bottom: 5px; }
+
+        /* --- SKILLS FOOTER --- */
+        .skills-section {
+            grid-column: span 2;
+            background: var(--primary-blue);
+            color: white;
+            padding: 45px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 22px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-red);
+            transition: 0.3s;
+        }
+
+        .skill-box:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
+
+        .skill-box h4 {
+            color: var(--secondary-blue);
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .skill-box ul { list-style: none; font-size: 11px; line-height: 1.7; }
+        .skill-box li { margin-bottom: 8px; position: relative; padding-left: 15px; }
+        .skill-box li::before { content: "•"; position: absolute; left: 0; color: var(--accent-red); font-weight: bold; }
+
+    </style>
+</head>
+<body>
+
+    <div class="cv-wrapper">
+        <aside class="sidebar">
+            <div class="profile-frame">
+                <img src="img/orang.jpg" alt="Ibnu Rahman Hakim Sultan">
+            </div>
+
+            <div class="sidebar-header">KONTAK</div>
+            <div class="contact-item"><i class="fas fa-phone"></i> 0888-0888-8888</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> xxxxxx1223@gmail.com</div>
+            <div class="contact-item"><i class="fab fa-linkedin"></i> www.linkedin.com/in/xxxxx</div>
+            <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Kab.Bekasi</div>
+            <div class="sidebar-header" style="margin-top: 30px;">PENDIDIKAN</div>
+            <ul class="sidebar-list">
+                <li><strong>UUU</strong><br>Teknik lapangan / prodi asal</li>
+                <li><strong>SMK asal</strong><br>Jurusan GOIB</li>
+            </ul>
+        </aside>
+
+        <main class="content-area">
+            <h1 class="name-title">Nama Orang</h1>
+
+            <div class="section-title-bar"><i class="fas fa-briefcase"></i> RIWAYAT KERJA</div>
+
+            <div class="job-card">
+                <h3>CEO Grup Sanjaya</h3>
+                <p class="comp">PT. SANJAYA GEMILANG</p>
+                <p class="date">Oktober xxxx – Desember xxxx</p>
+                <ul class="job-list">
+                    <li>Menghambur hamburkan uang.</li>
+                    <li>Gacha Batu Giok Naga hijau.</li>
+                    <li>Mata Bisa Menembus Belahan Bumi.</li>
+                    <li>Rengkarnasi Dari Dewa Kuil Tianlong.</li>
+                </ul>
+            </div>
+
+            <div class="job-card" style="margin-bottom: 0;">
+                <h3>Manusia Silver</h3>
+                <p class="comp">PT.Pengemis</p>
+                <p class="date">Januari xxxx – Oktober xxxx</p>
+                <ul class="job-list">
+
+                    <li>Melakukan instalasi lapisan proteksi *metallic silver* (cat kiloan) ke seluruh permukaan tubuh demi mencapai estetika industrial yang maksimal.</li>
+        <li   li>Melakukan aksi teaterikal statis (cosplay patung) dengan durasi 60 detik per siklus lampu merah untuk menarik perhatian audiens jalanan.</li>
+        <li>Melakukan *risk assessment* secara *real-time* terhadap keberadaan unit Satpol PP guna menjaga kelangsungan operasional bisnis di lapangan.</li>
+        <li>Melakukan optimalisasi penarikan dana hibah masyarakat menggunakan media ember plastik dengan target konversi koin menjadi uang kertas.</li>
+        <li>Menjaga ketahanan fisik tingkat tinggi (mental baja, kulit badak) dalam menghadapi paparan sinar UV ekstrem dan polusi kendaraan bermotor.</li>
+                    
+
+
+                </ul>
+            </div>
+        </main>
+
+        <footer class="skills-section">
+            <h2 style="text-align: center; margin-bottom: 35px; letter-spacing: 2px; text-transform: uppercase;">KEAHLIAN (STREET EDITION)</h2>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4>Teknik Pelapisan Metalik</h4>
+                    <ul>
+                        <li>Mastering teknik *body painting* menggunakan cat perak instan tanpa bantuan kuas profesional.</li>
+                        <li>Pemahaman mendalam tentang durabilitas cat terhadap keringat dan air hujan.</li>
+                        <li>Keahlian dalam membersihkan residu metalik menggunakan deterjen ekonomi dalam waktu singkat.</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-box">
+                    <h4>Soft Skills Jalanan</h4>
+                    <ul>
+                        <li>Keahlian dalam mempertahankan ekspresi wajah datar (*poker face*) meski hidung gatal karena polusi.</li>
+                        <li>Radar insting terhadap keberadaan seragam cokelat/satpol PP dalam radius 500 meter.</li>
+                        <li>Kemampuan menahan napas saat bus kota lewat mengeluarkan asap hitam pekat.</li>
+                        <li>Mental baja menghadapi tatapan sinis mantan yang kebetulan lewat naik ojek.</li>
+                    </ul>
+                </div>
+        
+                <div class="skill-box">
+                    <h4>Manajemen Logistik & Operasional</h4>
+                    <ul>
+                        <li>Optimasi penempatan ember plastik di sudut kemiringan 45 derajat agar koin tidak memantul keluar.</li>
+                        <li>Analisis rute lampu merah dengan durasi "Merah" paling lama untuk profitabilitas maksimal.</li>
+                        <li>Keahlian dalam manajemen stok recehan dan konversi instan ke warung kopi terdekat.</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
